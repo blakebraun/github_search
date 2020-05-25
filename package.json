@@ -1,0 +1,14 @@
+{
+  "name": "github_search",
+  "version": "1.0.0",
+  "description": "GitHub search UI with proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontend" : "cd frontend && npm start",
+    "backend" : "cd backend && npm start",
+    "start" : "npm run frontend && npm run backend"
+  },
+  "author": "Blake Braun",
+  "license": "ISC"
+}
