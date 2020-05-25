@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
+const cors = require('cors');
 const port = 8080;
 let cache = {};
+
+app.use(cors());
 
 let cacheMiddleware = (req, res, next) => {
     const key = req.url;
