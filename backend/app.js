@@ -31,13 +31,11 @@ app.get('/search/:query', cacheMiddleware, (req, res) => {
     console.log("Received query for " + query);
 
     const sort = req.query.sort;
-    const language = req.query.language;
+    const language = encodeURIComponent(req.query.language);
     if(language !== undefined) {
-        console.log("filtering by language " + language);
         url += "+language:" + language;
     }
     if(sort !== undefined) {
-        console.log("sorting by " + sort);
         url += "&sort=" + sort;
     }
 

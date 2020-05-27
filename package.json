@@ -5,10 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "frontend" : "cd frontend && npm start",
-    "backend" : "cd backend && npm start",
-    "start" : "npm run frontend && npm run backend"
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && npm start",
+    "start": "concurrently \"npm run frontend\" \"npm run backend\"",
+    "install": "npm --prefix ./frontend install ./frontend && npm --prefix ./backend install ./backend"
   },
   "author": "Blake Braun",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.2.0"
+  }
 }
